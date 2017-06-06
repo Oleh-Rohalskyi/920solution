@@ -7,7 +7,7 @@
       GET A QUOTE
     </a>
     <slot></slot>
-    <menu-component :block-name="blockName" :colors="colors.menu" class="menu-position" :style="manuTopDistance" />
+    <menu-component :block-name="blockName" :links="links" :colors="colors.menu" class="menu-position" :style="manuTopDistance" />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ import menuComponent from './menu/menu-component'
 
 export default {
   name: 'block',
-  props: ['colors', 'logoSrc', 'blockBg', 'blockName'],
+  props: ['colors', 'logoSrc', 'blockBg', 'blockName', 'links'],
   components: {
     menuComponent
   },
@@ -40,9 +40,6 @@ export default {
           return { 'top': '28.2%' }
       }
     }
-  },
-  data () {
-    return {}
   }
 }
 </script>

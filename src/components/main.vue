@@ -1,29 +1,40 @@
 <template>
   <div class="main">
-    <block v-for="(item,key) in blocksConfig" :key="key" :blockName="item.name" :colors="{ menu: item.menu.colors, button: item.button.colors }" :block-name="item.name" :logo-src="item.logoSrc" :block-bg="item.background">
+    <block v-for="(item,key) in blocksConfig" :key="key" :links="links" :blockName="item.name" :colors="{ menu: item.menu.colors, button: item.button.colors }" :block-name="item.name" :logo-src="item.logoSrc" :block-bg="item.background">
   
-      <div v-if="item.name == 'header'" class="header">
+      <div v-if="item.name == 'header'" id="header" class="header">
         <div class="header__title">
-          Hello. We are
-          <span class="header__title_pink">920 solutions</span>, thought-oriented marketing agency. We grow businesses through insightful study, killer creative and flawless exectution
+          <p>Hello! We are <span class="header__title_pink">920 solutions</span>, killer creative and result-oriented IT consulting company. We are part of GLCC Solutions consulting firm, which has been providing advises to the governments around the world
+            to achieve rapid economic growth and improve public services.</p>
+          <p> Here at 920 Solutions we design and develop real world digital solutions, including mobile apps and web applications for business transformation, business restructuring and growth hacking.</p>
+          <p>We are creative thinkers, experienced and dedicated team. We go deep insights to understand your business, your challenges and the end-user’s need and, at the same time, we assure fast and flawless execution of each project. We are here 24/7 to
+            help your business succeed. You just have to get started with us!</p>
         </div>
       </div>
-      <div v-if="item.name == 'psihology'" class="psihology">
+      <div v-if="item.name == 'psihology'" id="psihology" class="psihology">
         <img src="http://new.ukrea.com.ua/albums/userpics/10001/normal_page-1.png" alt="">
         <div class="psihology__discription">
           <h3>
-            It’s not about your budget or the size of your company.
+            We Get the Right Things Done
           </h3>
           <p>
-            Customers are customers. Needs are needs. Marketplace mentality is the same, regardless if your company does $50,000 or $500,000,000 in sales.
+            Our team expertise is broad, and deep. We are not only IT developers, our partners have more than 10 years of hands-on experience in leading complex institutional reforms, including organizational changes and business transformation, business restructuring
+            and re-engineering business processes in Georgia, Eastern Europe and Central Asia.
           </p>
           <p>
-            At CRE8EGY, we understand this and apply it to our client’s business. We are big creative thinkers, with billions of dollars in results. But we are also explorers. We dive deep to discover small gems that lead to consumer breakthroughs, breakthroughs that build sales and grow businesses. This is our process. We learn. We evolve. We act. We get results.
+            Realizing that no processes can be fully re-engineered unless the business strategies are aligned to IT strategy, we conveyed our reforming experience into IT consulting services and established IT development company.
+          </p>
+          <p>
+            We do not only build mobile and web applications, we provide most appropriate digital solutions based on studies of emerging trends, competitors and customer insights. We use user-centered interaction design and scalable software architecture to achieve
+            the best outcomes.
+          </p>
+          <p>
+            We make sure that our work streams are transferable to the Client through continues exchange of feedback at each stage of software development. This is our process: We analyze, we work in team, we evolve, we act and we get results.
           </p>
         </div>
       </div>
   
-      <div v-if="item.name == 'portfolio'" class="portfolio">
+      <div v-if="item.name == 'portfolio'" id="portfolio" class="portfolio">
         <div class="progress">
           <div class="progress__orange-start">
             <div class="progress__bg"></div>
@@ -37,7 +48,7 @@
             <div class="hr"></div>
           </h3>
           <p>
-            Arsenault Dermatology wanted us to develop a new advertising campaign for their award winning, growing practice. They wanted something that would help them stand out from the hundreds of other local dermatologists. </p>
+            NamNam team wanted us to develop mobile and web application, which would help them to stand out from hundreds of other dating apps. NamNam provides totally new ways to socialize. The application is not merely dating platform, it provides possibility to meet people, invite others to join in your activities, explore new entertainment places and manage it all in one place with a simple click.
           </p>
           <img src="http://new.ukrea.com.ua/albums/userpics/10001/phones.png" alt="">
         </div>
@@ -46,21 +57,21 @@
         </div>
       </div>
   
-      <div v-if="item.name == 'services'" class="services">
+      <div v-if="item.name == 'services'" id="services" class="services">
         <div class="services__block">
           <div class="services__item">
             <div class="services__top">
               <img src="http://new.ukrea.com.ua/albums/userpics/10001/UX.png" />
-              <div class="services__title">UI/UX DESIGN</div>
+              <div class="services__title">Outstanding design & UI/UX</div>
             </div>
-            <div class="services__bot">Design-related roles exist in a range of areas from industrial design (cars, furniture) to print (magazines, other publications) to tech (websites, mobile apps).</div>
+            <div class="services__bot">Ideas never come out fully formed. We help you to transform your business ideas into viable solutions through outstanding design and easy-to-use interface, incorporating UI/UX best practices. Our designers are working directly with the Clients to catch their insights and deliver applicable and relevant final product. We use powerful design prototyping tools to provide Clients with clickable and interactive prototypes. This approach enables them to better visualize the end result.   </div>
           </div>
           <div class="services__item">
             <div class="services__top">
               <img src="http://new.ukrea.com.ua/albums/userpics/10001/development.png" />
-              <div class="services__title">DEVELOPMENT</div>
+              <div class="services__title">Web and Mobile Development</div>
             </div>
-            <div class="services__bot">Software development is the process of computer programming, documenting, testing, and bug fixing involved in creating and maintaining applications and frameworks resulting in a software product.</div>
+            <div class="services__bot">We specialize in apps for iOS and Android, as well as web development. When it comes to software development we constantly go beyond the boundaries what is possible. What us makes different is approaching to each project with open mind and fresh ideas, innovate and always keep track of new technologies as they arise.</div>
           </div>
           <div class="services__item">
             <div class="services__top">
@@ -71,250 +82,263 @@
           </div>
         </div>
         <div class="services__subtext">Check our
-          <a href="#">portfolio</a> for taste of what we do.
+          <a hid="#">portfolio</a> for taste of what we do.
           <div class="services__line"></div>
         </div>
       </div>
   
-      <team v-if="item.name === 'team'" :content="item.content"/>
+      <team v-if="item.name === 'team'" id="team" :content="item.content" />
   
-      <contact-form v-if="item.name === 'contact'" :content="item.content" />
-
+      <contact-form v-if="item.name === 'contact'" id="contact" :content="item.content" />
+  
     </block>
   </div>
 </template>
 
 <script>
-import block from './block'
-import blocksConfig from '../blocksConfig'
-import contactForm from './contact/contact-form'
-import team from './team/team'
-
-export default {
-  name: 'main',
-  components: {
-    block,
-    contactForm,
-    team
-  },
-  data () {
-    return {
-      blocksConfig
+  import block from './block'
+  import blocksConfig from '../blocksConfig'
+  import contactForm from './contact/contact-form'
+  import team from './team/team'
+  
+  export default {
+    name: 'main',
+    created () {
+      this.links = this.linksMap()
+    },
+    components: {
+      block,
+      contactForm,
+      team
+    },
+    data () {
+      return {
+        blocksConfig,
+        links: ''
+      }
+    },
+    methods: {
+      linksMap () {
+        return blocksConfig.filter(i => i.linkText).map(i => {
+          return {
+            name: i.name,
+            linkText: i.linkText
+          }
+        })
+      }
     }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-$blockHeightIndex: 100/798;
-$blockWidthIndex: 100/1440;
-
-.menu_header {
-  //text-shadow: black 1px 0px, black 1px 1px, black 0px 1px, black -1px 1px, black -1px 0px, black -1px -1px, black 0px -1px, black 1px -1px;
-  li.selected {
-    & a {
-      margin-left: 0 !important;
-    }
-    &:before {
-      content: '' !important;
+  $blockHeightIndex: 100/798;
+  $blockWidthIndex: 100/1440;
+  .menu_header {
+    //text-shadow: black 1px 0px, black 1px 1px, black 0px 1px, black -1px 1px, black -1px 0px, black -1px -1px, black 0px -1px, black 1px -1px;
+    li.selected {
+      & a {
+        margin-left: 0 !important;
+      }
+      &:before {
+        content: '' !important;
+      }
     }
   }
-}
-
-.header {
-  &__title {
+  
+  .header {
+    &__title {
+      position: absolute;
+      left: 324px;
+      top: 269px;
+      width: 790px;
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      line-height: 1.44;
+      color: #ffffff;
+      &_pink {
+        color: #db3153;
+      }
+    }
+  }
+  
+  .services {
     position: absolute;
-    left: 324px;
-    top: 269px;
-    width: 790px;
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    line-height: 1.44;
-    color: #ffffff;
-    &_pink {
-      color: #db3153;
+    top: 215px;
+    left: 325px;
+    width: 990px;
+    &__subtext {
+      position: absolute;
+      top: 385px;
+      left: 0;
+      font-size: 36px;
+      font-family: 'Playfair Display', serif;
+      color: #0b0c11;
+      a {
+        color: #25b694;
+      }
     }
-  }
-}
-
-.services {
-  position: absolute;
-  top: 215px;
-  left: 325px;
-  width: 990px;
-  &__subtext {
-    position: absolute;
-    top: 385px;
-    left: 0;
-    font-size: 36px;
-    font-family: 'Playfair Display', serif;
-    color: #0b0c11;
-    a {
-      color: #25b694;
+    &__line {
+      position: absolute;
+      left: 194px;
+      top: 39px;
+      border-bottom: 1px solid #25b694;
+      width: 120px;
     }
-  }
-  &__line {
-    position: absolute;
-    left: 194px;
-    top: 39px;
-    border-bottom: 1px solid #25b694;
-    width: 120px;
-  }
-  &__block {
-    display: flex;
-    text-align: left;
-    justify-content: space-between;
-  }
-  &__item {
-    width: 262px;
-    .services__top {
+    &__block {
       display: flex;
-      width: 115px;
-      font-family: FuturaPT;
+      text-align: left;
+      justify-content: space-between;
+    }
+    &__item {
+      width: 262px;
+      .services__top {
+        display: flex;
+        width: 115px;
+        font-family: FuturaPT;
+        font-size: 14px;
+        font-weight: 500;
+        color: #25c0a5;
+        img {
+          width: 84px;
+          display: block;
+        }
+        .services__title {
+          align-self: center;
+          margin-left: 12px;
+          white-space: nowrap;
+        }
+      }
+    }
+    &__bot {
+      font-family: 'FuturaStd-Book';
       font-size: 14px;
-      font-weight: 500;
-      color: #25c0a5;
-      img {
-        width: 84px;
-        display: block;
-      }
-      .services__title {
-        align-self: center;
-        margin-left: 12px;
-        white-space: nowrap;
-      }
+      line-height: 1.5;
+      color: #202020;
+      margin-top: 22px;
     }
   }
-  &__bot {
-    font-family: 'FuturaStd-Book';
-    font-size: 14px;
-    line-height: 1.5;
-    color: #202020;
-    margin-top: 22px;
-  }
-}
-
-.portfolio {
-  img {
-    display: block;
-    position: absolute;
-    width: 441px;
-    top: 0;
-    left: 550px;
-  }
-  &__button {
-    position: absolute;
-    top: 46%;
-    left: 22.5%;
-    font-family: "FuturaPTMedium";
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 3.5;
-    text-align: center;
-    color: #a6d4da;
-    width: 264px;
-    height: 48px;
-    background-color: #ffffff;
-    cursor: pointer;
-  }
-  height: 100%;
-  width: 100%;
-  .progress {
-    position: absolute;
-    left: 22.3%;
-    top: 11.5%;
-    display: flex;
-    &__text {
+  
+  .portfolio {
+    img {
+      display: block;
       position: absolute;
-      top: 3px;
-      left: 8px;
-    }
-    &__bg {
-      background-color: #ff8a5b;
-      width: 104px;
-      height: 100%;
-      transform: skewX(-20deg);
-      position: absolute;
+      width: 441px;
       top: 0;
-      left: -10px;
+      left: 550px;
     }
-    &__orange-start {
-      overflow-x: hidden;
-      position: relative;
-      width: 96px;
-      height: 20px;
+    &__button {
+      position: absolute;
+      top: 46%;
+      left: 22.5%;
       font-family: "FuturaPTMedium";
       font-size: 14px;
       font-weight: 500;
-      color: #ffffff;
+      line-height: 3.5;
+      text-align: center;
+      color: #a6d4da;
+      width: 264px;
+      height: 48px;
+      background-color: #ffffff;
+      cursor: pointer;
     }
-    &__item {
-      padding-top: 3px;
-      margin-left: 15px;
-      font-family: 'Playfair Display', serif;
-      font-size: 14px;
-      color: #2b2b2b;
-    }
-  }
-  &__discription {
-    color: #2b2b2b;
-    position: absolute;
-    top: $blockHeightIndex*142%;
-    left: $blockWidthIndex*324%;
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    width: 509px;
-    text-align: left;
-    h3 {
-      .hr {
-        margin-top: 5px;
-        width: 160px;
-        opacity: 0.42;
-        border-top: solid 2px #87B3B6;
-      }
-      line-height: 1.17;
-      font-size: 36px;
-      margin-bottom: 18px;
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.56;
-    }
-  }
-}
-
-.psihology {
-  height: 100%;
-  width: 100%;
-  img {
     height: 100%;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-  }
-  &__discription {
-    color: #2b2b2b;
-    position: absolute;
-    top: $blockHeightIndex*191%;
-    left: $blockWidthIndex*324%;
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    width: 509px;
-    text-align: left;
-    h3 {
-      line-height: 1.17;
+    width: 100%;
+    .progress {
+      position: absolute;
+      left: 22.3%;
+      top: 11.5%;
+      display: flex;
+      &__text {
+        position: absolute;
+        top: 3px;
+        left: 8px;
+      }
+      &__bg {
+        background-color: #ff8a5b;
+        width: 104px;
+        height: 100%;
+        transform: skewX(-20deg);
+        position: absolute;
+        top: 0;
+        left: -10px;
+      }
+      &__orange-start {
+        overflow-x: hidden;
+        position: relative;
+        width: 96px;
+        height: 20px;
+        font-family: "FuturaPTMedium";
+        font-size: 14px;
+        font-weight: 500;
+        color: #ffffff;
+      }
+      &__item {
+        padding-top: 3px;
+        margin-left: 15px;
+        font-family: 'Playfair Display', serif;
+        font-size: 14px;
+        color: #2b2b2b;
+      }
+    }
+    &__discription {
+      color: #2b2b2b;
+      position: absolute;
+      top: $blockHeightIndex*142%;
+      left: $blockWidthIndex*324%;
+      font-family: 'Playfair Display', serif;
       font-size: 36px;
-      margin-bottom: 62px
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.56;
-    }
-    p:nth-child(3) {
-      font-size: 18px;
-      margin-top: 40px;
+      width: 509px;
+      text-align: left;
+      h3 {
+        .hr {
+          margin-top: 5px;
+          width: 160px;
+          opacity: 0.42;
+          border-top: solid 2px #87B3B6;
+        }
+        line-height: 1.17;
+        font-size: 36px;
+        margin-bottom: 18px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.56;
+      }
     }
   }
-}
+  
+  .psihology {
+    height: 100%;
+    width: 100%;
+    img {
+      height: 100%;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+    }
+    &__discription {
+      color: #2b2b2b;
+      position: absolute;
+      top: $blockHeightIndex*191%;
+      left: $blockWidthIndex*324%;
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      width: 509px;
+      text-align: left;
+      h3 {
+        line-height: 1.17;
+        font-size: 36px;
+        margin-bottom: 62px
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.56;
+      }
+      p:nth-child(3) {
+        font-size: 18px;
+        margin-top: 40px;
+      }
+    }
+  }
 </style>

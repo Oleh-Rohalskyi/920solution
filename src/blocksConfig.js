@@ -13,6 +13,7 @@ export default [{
   }
 }, {
   name: 'psihology',
+  linkText: 'OUR PHILOSOPHY',
   background: {
     gradient: false,
     background: '#fffff'
@@ -26,6 +27,7 @@ export default [{
   }
 }, {
   name: 'portfolio',
+  linkText: 'PORTFOLIO',
   background: {
     backgroundImage: 'linear-gradient(119deg, #a6cfe2, #a6dfcc)',
     gradient: true
@@ -39,6 +41,7 @@ export default [{
   }
 }, {
   name: 'services',
+  linkText: 'SERVICES',
   background: {
     gradient: false,
     background: '#fffff'
@@ -52,6 +55,7 @@ export default [{
   }
 }, {
   name: 'team',
+  linkText: 'TEAM',
   background: {
     backgroundImage: 'linear-gradient(119deg, #a6cfe2, #a6dfcc)',
     gradient: true
@@ -95,6 +99,7 @@ export default [{
   }]
 }, {
   name: 'contact',
+  linkText: 'CONTACT US',
   background: {
     backgroundImage: 'linear-gradient(to left, #ef303b, #ef3064 34%, #ef3054 72%, #ef303b)',
     gradient: true
@@ -107,15 +112,15 @@ export default [{
     colors: ['#ffffff', '#481c19']
   },
   content: [{
-    text: '$250 000 and more',
+    text: '$251 000 and more',
     value: '1'
   },
   {
-    text: '$250 000 and more',
+    text: '$252 000 and more',
     value: '2'
   },
   {
-    text: '$250 000 and more',
+    text: '$253 000 and more',
     value: '3'
   }]
 }]

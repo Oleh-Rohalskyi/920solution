@@ -2,7 +2,7 @@
   <div class="contact">
         <label :for="'select'+forId">YOUR APPROXIMATE BUDGET</label>
         <select ref="select" :id="'select'+forId" class="select" @focus="open" @blur="close" type="text">
-          <option v-model="model" v-for="option in options" :value="option.value" v-text="option.text"></option>
+          <option v-model="model" @click="close" v-for="option in options" :value="option.value" v-text="option.text"></option>
         </select>
         <label ref="arrowBlock" :for="'select'+forId" class="arrow-block" @click="open">
             <div ref="triangle" class="triangle"></div>
@@ -51,7 +51,7 @@ export default {
     }
   select:focus { 
     outline:0; 
-    border: 1px solid white;
+    //border: 1px solid white;
   }
 
   .select {
@@ -82,7 +82,7 @@ export default {
     top: 108px;
     z-index: 3;
     background-color: white;
-    height: 50px;
+    height: 48px;
     width: 50px;
     background-color: #89233c;
   }

@@ -1,18 +1,29 @@
 <template>
-    <li :class="{'selected': current }"><a :style="{ color: color }" :href="link">{{text}}</a></li>
+    <li :class="{'selected': current }"><a v-smooth-scroll :href="'#'+link" :style="{ color: color }" >{{text}}</a></li>
 </template>
 
 <script>
 
 export default {
+  created () {
+    this.color = this.current ? this.colors[1] : this.colors[0]
+  },
   name: 'menu-link',
-  props: ['current', 'color', 'text', 'link']
+  props: ['colors', 'text', 'link'],
+  data () {
+    return {
+      color: '',
+      current: false
+    }
+  },
+  methods: {}
 }
 </script>
 
 <style lang="scss" scoped>
     a {
       width: 100%;
+      cursor: pointer;
     }
     li.selected {
         & a {
