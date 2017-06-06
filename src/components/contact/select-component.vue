@@ -88,9 +88,9 @@ export default {
   }
   
   select:focus+.arrow-block {
-    border-top: 1px solid white;
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
+    // border-top: 1px solid white;
+    // border-right: 1px solid white;
+    // border-bottom: 1px solid white;
   }
 
   .triangle {
