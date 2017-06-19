@@ -1,13 +1,17 @@
 <template>
-  <div :style="mainStyle" class="block-component">
-    <a class="logo" :class="'logo-'+blockName" href="#" :style="{width: '93px'}">
-      <img :src="logoSrc" />
-    </a>  
-    <a class="rectangle-button" :class="'rectangle-button-'+blockName"  :style="{backgroundColor: colors.button[0], color: colors.button[1]}">
-      GET A QUOTE
-    </a>
-    <slot></slot>
-    <menu-component :block-name="blockName" :links="links" :colors="colors.menu" class="menu-position" :style="manuTopDistance" />
+  <div>
+    <div :style="mainStyle" :class="['block-component', blockName+'-block']">
+      <div class="navigation">
+        <a class="logo" :class="'logo-'+blockName" href="#" :style="{width: '93px'}">
+          <img :src="logoSrc" />
+        </a>  
+        <menu-component :block-name="blockName" :links="links" :colors="colors.menu" class="menu-position" :style="manuTopDistance" />
+      </div>
+        <slot></slot>
+      <a class="rectangle-button" :class="'rectangle-button-'+blockName"  :style="{backgroundColor: colors.button[0], color: colors.button[1]}">
+        GET A QUOTE
+      </a>
+    </div>
   </div>
 </template>
 
@@ -24,7 +28,7 @@ export default {
     mainStyle () {
       let bgConfig = this.$props.blockBg
       let style = bgConfig.gradient ? { backgroundImage: bgConfig.backgroundImage } : { background: bgConfig.background }
-      return { ...style, height: '798px' }
+      return { ...style }
     },
     manuTopDistance () {
       switch (this.blockName) {
@@ -48,24 +52,29 @@ export default {
 $blockHeightIndex: 100/798;
 $blockWidthIndex: 100/1440;
 
-.menu-position {
-  position: absolute;
-  top: 43%;
-  left: $blockWidthIndex*75%;
+.navigation {
+  display: flex;
+  flex-direction: column;
+  width: 283px;
 }
 
+.menu-position {
+  margin: auto;
+}
+
+
 .block-component {
+  display: flex;
+  width: 100%;
+  height: 100%;
   position: relative;
-  width: 1440px;
-  margin: 0 auto;
 }
 
 .logo {
   display: block;
   cursor: pointer;
-  position: absolute;
-  top: 27px;
-  left: 47px;
+  margin: 27px 0 0 47px;
+  
   img {
     width: 100%
   }

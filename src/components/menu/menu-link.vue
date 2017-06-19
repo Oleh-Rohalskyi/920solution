@@ -1,5 +1,5 @@
 <template>
-    <li :class="{'selected': current }"><a v-smooth-scroll :href="'#'+link" :style="{ color: color }" >{{text}}</a></li>
+    <li :class="{'selected': current }"><a :href="'#'+link" :style="{ color: color }" >{{text}}</a></li>
 </template>
 
 <script>

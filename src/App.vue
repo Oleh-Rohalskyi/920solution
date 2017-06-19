@@ -29,8 +29,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block; }
 
 body {
-  line-height: 1; 
-  padding: 10px 0;
+  line-height: 1;
   }
 
 ol, ul {

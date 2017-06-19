@@ -32,27 +32,23 @@ export default {
 
 <style lang="scss" scoped>
 .team {
+  width: 100%;
+  margin: 8%;
   &__members {
-    position: absolute;
-    left: 286px;
-    top: 448px;
+    
+    margin-top: 37px;
     display: flex;
     justify-content: space-between;
-    width: 1024px;
+    
     text-align: center;
   }
   &__title {
-    position: absolute;
-    left: 286px;
-    top: 134px;
     font-family: 'Playfair Display', serif;
     font-size: 36px;
     color: #db3153;
   }
   &__selected-member {
-    position: absolute;
-    left: 286px;
-    top: 223px;
+    margin-top: 37px;
     display: flex;
     img {
       width: 190px;

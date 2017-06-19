@@ -7,7 +7,14 @@
         <input id="email-contact-input" type="text" />
       </div>
       <div class="contact__input">
-        <select-component :model="form.budget" :options="content" />
+        <label for="budget-contact-input">YOUR APPROXIMATE BUDGET</label>
+        <multiselect id="budget-contact-input" 
+          v-model="form.budget" 
+          track-by="library" 
+          :options="content" 
+          :multiple="false" 
+          :custom-label="customLabel">
+        </multiselect>
       </div>
       <div class="contact__input">
         <label for="discription-contact-input">QUICK DESCRIPTION OF YOUR PROJECT</label>
@@ -21,13 +28,13 @@
 </template>
 
 <script>
-import selectComponent from './select-component'
+import Multiselect from 'vue-multiselect'
 
 export default {
   name: 'contact-form',
   props: ['content'],
   components: {
-    selectComponent
+    Multiselect
   },
   data () {
     return {
@@ -38,12 +45,17 @@ export default {
       }
     }
   },
-  methods: {}
+  methods: {
+    customLabel (option) {
+      return option.text
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-  .contact {
+.contact {
+  margin: 8%;
   &__submit {
     cursor: pointer;
     display: block;
@@ -60,9 +72,6 @@ export default {
     color: #89243c;
   }
   &__title {
-    position: absolute;
-    left: 324px;
-    top: 132px;
     font-family: 'Playfair Display', serif;
     font-size: 36px;
     line-height: 1.44;
@@ -70,9 +79,6 @@ export default {
   }
   &__form {
     width: 420px;
-    position: absolute;
-    left: 324px;
-    top: 211px;
   }
   &__input {
     &>label {
@@ -100,7 +106,7 @@ export default {
     }
     #discription-contact-input {
       width: 402px;
-	    height: 246px;
+      height: 246px;
       background-color: #89233c;
       border: none;
       padding-top: 14px;
